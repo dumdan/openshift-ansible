@@ -5,6 +5,7 @@
   vars:
     openshift_deployment_type: "{{ deployment_type }}"
   roles:
+  - openshift_facts
   - role: rhel_subscribe
     when: deployment_type in ["enterprise", "atomic-enterprise", "openshift-enterprise"] and
           ansible_distribution == "RedHat" and
