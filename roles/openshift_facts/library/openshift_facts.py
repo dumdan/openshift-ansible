@@ -949,7 +949,8 @@ def format_url(use_ssl, hostname, port, path=''):
     netloc = hostname
     if (use_ssl and port != '443') or (not use_ssl and port != '80'):
         netloc += ":%s" % port
-    return urlparse.urlunparse((scheme, netloc, path, '', '', ''))
+#   return urlparse.urlunparse((scheme, netloc, path, '', '', ''))
+    return urlunparse((scheme, netloc, path, '', '', ''))
 
 def get_current_config(facts):
     """ Get current openshift config
